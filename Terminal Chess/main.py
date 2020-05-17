@@ -64,4 +64,14 @@ def playGame():
         print(Board)
         Brd = chess.BaseBoard(Board.board_fen())
     return (chess.svg.board(Brd))
-playGame()
+def playGameUser():
+
+    while (Board.is_game_over() == False):
+        Board.push_san(input())
+        print(Board)
+        Board.push(makeMove(Board, 1))
+        print(Board)
+
+
+        
+playGameUser()
